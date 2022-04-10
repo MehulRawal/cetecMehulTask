@@ -52,7 +52,7 @@ func main() {
 }
 
 func getPersonById(c *gin.Context) {
-	id := c.Param("id")
+	id := c.Param("Id")
 
 	results := db.QueryRow("SELECT name for person where Id= ?", id)
 	Resp := Response{}
@@ -85,7 +85,7 @@ func createPerson(c *gin.Context) {
    if err := json.Unmarshal(bytes,&requestBody); err != nil {
 	c.IndentedJSON(http.StatusNotFound, gin.H{"message": err.Error()})
    }else{
-
+	  	
    }
 
   fmt.Println(requestBody)
